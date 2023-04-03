@@ -123,11 +123,13 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public boolean levelUp(Character character) {
+        boolean test;
         if(character.experience >= character.pointsPerLevel) {
             if(character.experience == character.pointsPerLevel)
                 character.experience += 5;
 
             character.level++;
+            test = true;
             character.pointsPerLevel *= 2; // need more points to level up next time
             character.health = 100; // level up resets health
 
@@ -161,9 +163,10 @@ public class GamePlay implements GamePlayInterface {
                 character.protection++;
             }
             levelUp(character);
+        } else {
+            test = false;
         }
-        boolean test;
-        return test = false;
+        return test;
     }
 
     /**
