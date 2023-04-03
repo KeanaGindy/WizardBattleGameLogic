@@ -3,7 +3,7 @@
   Author: Alexandra Mehlhase (SER316), Keana Gindlesperger
   Date:	4/3/2023
   
-  Description: Methods used to create gameplay between characters. These methods include dealdamage, attack, takedamage, play and more.
+  Description: Methods used to create gameplay between characters. These methods include dealdamage, attack, takedamage, play, and more methods.
 */
 
 import java.util.*;
