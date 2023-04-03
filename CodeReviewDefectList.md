@@ -11,7 +11,9 @@
 | 5 | GamePlay.java, Line 126 | If statement utilizes .getClass and .getName | CS 4 | LOW |  
 | 6 | Main.java, Line7, Line 20, Line 33 | For statements use the literal number 9 repeteadly, should be coded as a constant | CS 6 | LOW |  
 | 7 | BlackBoxGiven.java, Line 49| Reviewing the main branch, only one blackbox test is utilized | FD | MJ |  
-| 8 | Charcter.java, Line 2 | Variables after and on this line for the class are all public | CG 5 | MJ |  
+| 8 | Character.java, Line 2 | Variables after and on this line for the class are all public | CG 5 | MJ |  
+| 9 | GamePlay.java, Line 117 | LevelUp method does not ever return true if character levels up | FD | MJ |  
+| 10 | GamePlay.java, Line 24 | Constructor for Game Play utilized addOpponent and then switches to this.Opponents.add, creating an inconsistent utilization to add opponents | MS | Low |  
 
 **Category**: 
 > CS – Code Smell defect. 
