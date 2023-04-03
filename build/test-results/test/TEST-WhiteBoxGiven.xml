@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-03-28T05:14:19" hostname="DESKTOP-6DJAQ8I" time="0.001">
+<testsuite name="WhiteBoxGiven" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-04-03T21:51:04" hostname="DESKTOP-6DJAQ8I" time="0.005">
   <properties/>
-  <testcase name="equalDP" classname="WhiteBoxGiven" time="0.001">
+  <testcase name="equalDP" classname="WhiteBoxGiven" time="0.005">
     <failure message="java.lang.AssertionError: expected:&lt;0&gt; but was:&lt;7&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;0&gt; but was:&lt;7&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
