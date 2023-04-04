@@ -252,6 +252,7 @@ public class GamePlay implements GamePlayInterface {
                 orderOfAttack[0] = player;
                 opponent.experience += Math.ceil(opponent.speed - player.speed);
              }
+            
 
             // attack in order
             attack(orderOfAttack[0], orderOfAttack[1]);
