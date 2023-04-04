@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TDD" tests="37" skipped="0" failures="0" errors="0" timestamp="2023-04-04T04:03:04" hostname="DESKTOP-6DJAQ8I" time="0.005">
+<testsuite name="TDD" tests="37" skipped="0" failures="0" errors="0" timestamp="2023-04-04T04:23:04" hostname="DESKTOP-6DJAQ8I" time="0.006">
   <properties/>
-  <testcase name="attackDoubleDamageKillOpponent_CheckExperienceOpponent[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackDoubleDamageKillOpponent_CheckExperienceOpponent[0]" classname="TDD" time="0.001"/>
   <testcase name="attackCheckHealthCharacter_OpponentHealth0[0]" classname="TDD" time="0.0"/>
   <testcase name="takeDamageSameAsShieldCheckHealth[0]" classname="TDD" time="0.0"/>
   <testcase name="takeDamageNormalProtectionCheckExperience[0]" classname="TDD" time="0.0"/>
@@ -32,7 +32,7 @@
   <testcase name="attackCheckExperienceCharacter_OpponentHealth0[0]" classname="TDD" time="0.0"/>
   <testcase name="dealtDamageExperienceZeroHealthNegative3[0]" classname="TDD" time="0.0"/>
   <testcase name="attackCheckHealth_OpponentHealth50[0]" classname="TDD" time="0.0"/>
-  <testcase name="takeDamageSameAsShieldCheckExperience[0]" classname="TDD" time="0.001"/>
+  <testcase name="takeDamageSameAsShieldCheckExperience[0]" classname="TDD" time="0.0"/>
   <testcase name="takeDamageLessThanShieldCheckHealth[0]" classname="TDD" time="0.0"/>
   <testcase name="attackCheckExperienceCharacter_CharacterHealth0[0]" classname="TDD" time="0.0"/>
   <testcase name="attackCheckExperience_CharacterHealth50[0]" classname="TDD" time="0.0"/>

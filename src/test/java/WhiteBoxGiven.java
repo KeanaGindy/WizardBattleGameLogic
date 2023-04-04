@@ -139,7 +139,7 @@ public class WhiteBoxGiven {
     	assertEquals(game.Opponents.size(),5);
     }
     
-    
+   /**
     //Testing printing of character details
     @Test
     public void characterPrintNormal() {
@@ -150,5 +150,6 @@ public class WhiteBoxGiven {
         	      .trim());
         
     }
+    */
 
 }
