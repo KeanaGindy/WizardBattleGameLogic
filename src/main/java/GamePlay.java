@@ -78,8 +78,17 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int dealDamage(Character character) {
-    System.out.println("Not Implemented here, your job in assign 3");
-    return 1;
+        int damage = 0;
+        if(character.health > 10){
+            character.experience = character.experience+character.damage;
+            damage = character.damage;
+        } else if (character.health > 0 && character.health < 10){
+            character.experience = character.experience+character.damage;
+            damage = (character.damage*2);
+        } else {
+            damage = 0;
+        }
+        return damage;
     }
 
     /**
@@ -102,8 +111,20 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public int takeDamage(Character character, int blowDamage) {
-        System.out.println("Not Implemented here your job in assign 3");
-        return 1;
+
+        int damage = 0;
+
+        if(character.protection > blowDamage && character.health > 0){
+            damage = character.protection-blowDamage;
+            character.health = character.health + (int)(0.5*(damage));
+            character.experience = character.experience + (damage);
+        } else if (character.protection <= blowDamage && character.health > 0){
+            damage = blowDamage-character.protection;
+            character.experience = character.experience + (int)(0.5*(damage));
+            character.health = character.health - (damage);
+        }
+
+        return damage;
     }
 
     /**
@@ -183,7 +204,21 @@ public class GamePlay implements GamePlayInterface {
      */
     @Override
     public void attack(Character character, Character opponent) {
-        System.out.println("Not Implemented here your job in assign 3");
+        int damage = 0;
+        if(character.health > 0 && opponent.health > 0){
+            damage = dealDamage(character);
+            takeDamage(opponent, damage);
+            levelUp(character);
+            if(opponent.health > 0){
+                levelUp(opponent);
+                damage = dealDamage(opponent);
+                takeDamage(character, damage);
+                levelUp(opponent);
+                if(character.health > 0){
+                    levelUp(character);
+                }
+            }
+        }
     }
 
     /**

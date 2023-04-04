@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TDD" tests="37" skipped="0" failures="0" errors="0" timestamp="2023-04-04T00:42:48" hostname="DESKTOP-6DJAQ8I" time="0.008">
+  <properties/>
+  <testcase name="attackDoubleDamageKillOpponent_CheckExperienceOpponent[0]" classname="TDD" time="0.002"/>
+  <testcase name="attackCheckHealthCharacter_OpponentHealth0[0]" classname="TDD" time="0.001"/>
+  <testcase name="takeDamageSameAsShieldCheckHealth[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageNormalProtectionCheckExperience[0]" classname="TDD" time="0.0"/>
+  <testcase name="dealtDamageHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackNormalCheckHealthCharacter[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperience_CharacterHealth1[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageHealthBelowZeroCheckExperience[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealthOpponent_CharacterHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperience_OpponentHealth1[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackDoubleDamageKillOpponent_CheckExperienceCharacter[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealth_OpponentHealth1[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackNormalCheckHealthOpponent[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealthOpponent_OpponentHealth0[0]" classname="TDD" time="0.001"/>
+  <testcase name="dealtDamageHealthNegative3[0]" classname="TDD" time="0.0"/>
+  <testcase name="dealtDamageNormalExperienceHealth100[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealth_CharacterHealth1[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackDoubleDamageKillOpponent_CheckHealthCharacter[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperience_OpponentHealth50[0]" classname="TDD" time="0.001"/>
+  <testcase name="attackCheckHealth_CharacterHealth50[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageNormalProtectionCheckHealth[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackDoubleDamageKillOpponent_CheckHealthOpponent[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperienceOpponent_OpponentHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealthCharacter_CharacterHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageLessThanShieldCheckExperience[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackNormalCheckExperienceCharacter[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackNormalCheckExperienceOpponent[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageHealthBelowZeroCheckHealth[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperienceCharacter_OpponentHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="dealtDamageExperienceZeroHealthNegative3[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckHealth_OpponentHealth50[0]" classname="TDD" time="0.0"/>
+  <testcase name="takeDamageSameAsShieldCheckExperience[0]" classname="TDD" time="0.001"/>
+  <testcase name="takeDamageLessThanShieldCheckHealth[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperienceCharacter_CharacterHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperience_CharacterHealth50[0]" classname="TDD" time="0.0"/>
+  <testcase name="attackCheckExperienceOpponent_CharacterHealth0[0]" classname="TDD" time="0.0"/>
+  <testcase name="dealtDoubleDamageHealth8[0]" classname="TDD" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

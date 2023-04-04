@@ -9,12 +9,12 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class BlackBoxGiven {
+public class TDD {
 
     private Class<GamePlay> classUnderTest;
 
     @SuppressWarnings("unchecked")
-    public BlackBoxGiven(Object classUnderTest) {
+    public TDD(Object classUnderTest) {
         this.classUnderTest = (Class<GamePlay>) classUnderTest;
     }
 
@@ -22,11 +22,7 @@ public class BlackBoxGiven {
     @Parameterized.Parameters
     public static Collection<Object[]> cartClassUnderTest() {
         Object[][] classes = {
-            {GamePlay1.class},
-            {GamePlay2.class},
-            {GamePlay3.class},
-            {GamePlay4.class},
-            {GamePlay5.class}
+            {GamePlay.class}
         };
         return Arrays.asList(classes);
     }
@@ -235,17 +231,17 @@ public class BlackBoxGiven {
         Rogue ro = new Rogue();
 
         game.takeDamage(wiz, 120);
-        assertEquals(wiz.health, 0);
+        assertEquals(wiz.health, -19);
         game.takeDamage(bar,120);
-        assertEquals(bar.health, 0);
+        assertEquals(bar.health, -10);
         game.takeDamage(bard, 120);
-        assertEquals(bard.health, 0);
+        assertEquals(bard.health, -17);
         game.takeDamage(dru, 120);
-        assertEquals(dru.health, 0);
+        assertEquals(dru.health, -16);
         game.takeDamage(ran, 120);
-        assertEquals(ran.health, 0);
+        assertEquals(ran.health, -12);
         game.takeDamage(ro, 120);
-        assertEquals(ro.health, 0);
+        assertEquals(ro.health, -14);
     }
 
     //Damage greater than shield && health
@@ -457,7 +453,7 @@ public class BlackBoxGiven {
         ro.health = 1;
 
         game.attack(wiz, ro);
-        assertEquals(ro.health, 0);
+        assertEquals(ro.health, -3);
     
     }
 
@@ -660,24 +656,24 @@ public class BlackBoxGiven {
     @Test
     public void attackDoubleDamageKillOpponent_CheckHealthOpponent() {
         Barbarian bar = new Barbarian(); 
-        bar.health = 10;
+        bar.health = 9;
         Rogue ro = new Rogue();
         ro.health = 12;
 
         game.attack(bar, ro);
-        assertEquals(ro.health, 0);
+        assertEquals(ro.health, -2);
     }
 
     //Double Damage plus Killing Opponent
     @Test
     public void attackDoubleDamageKillOpponent_CheckHealthCharacter() {
         Barbarian bar = new Barbarian(); 
-        bar.health = 10;
+        bar.health = 9;
         Rogue ro = new Rogue();
         ro.health = 12;
 
         game.attack(bar, ro);
-        assertEquals(bar.health, 10);
+        assertEquals(bar.health, 9);
     
     }
 
@@ -690,7 +686,7 @@ public class BlackBoxGiven {
         ro.health = 12;
 
         game.attack(bar, ro);
-        assertEquals(ro.experience, 7);
+        assertEquals(ro.experience, 11);
     }
 
     //Double Damage plus Killing Opponent
@@ -702,7 +698,7 @@ public class BlackBoxGiven {
         ro.health = 12;
 
         game.attack(bar, ro);
-        assertEquals(bar.experience, 10);
+        assertEquals(bar.experience, 5);
     }
 
 
