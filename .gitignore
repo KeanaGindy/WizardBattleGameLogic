@@ -5,6 +5,9 @@
 # gradle files
 *.gradle
 
+#Project file
+*.project
+
 # Log file
 *.log
 
