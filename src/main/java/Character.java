@@ -1,3 +1,4 @@
+
 public class Character {
     int health=100;
     int level=1;
