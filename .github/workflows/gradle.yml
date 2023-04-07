@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "Blackbox" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Blackbox" ]
 
 permissions:
   contents: read
