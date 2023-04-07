@@ -1,0 +1,383 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta charset="UTF-8"/>
+      <title>SpotBugs Report</title>
+      <style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+
+		.tablerow0:hover, .tablerow1:hover {
+			background: #aaffaa;
+		}
+
+		.priority-1 {
+				color: red;
+				font-weight: bold;
+		}
+		.priority-2 {
+				color: orange;
+				font-weight: bold;
+		}
+		.priority-3 {
+				color: green;
+				font-weight: bold;
+		}
+		.priority-4 {
+				color: blue;
+				font-weight: bold;
+		}
+		</style>
+      <script type="text/javascript">
+			function toggleRow(elid) {
+				if (document.getElementById) {
+					element = document.getElementById(elid);
+					if (element) {
+						if (element.style.display == 'none') {
+							element.style.display = 'block';
+							//window.status = 'Toggle on!';
+						} else {
+							element.style.display = 'none';
+							//window.status = 'Toggle off!';
+						}
+					}
+				}
+			}
+		</script>
+   </head>
+   <body>
+      <h1>
+         <a href="https://spotbugs.github.io/">SpotBugs</a> Report</h1>
+      <h2>Project Information</h2>
+      <p>Project: 
+		ForStudents (spotbugsMain)</p>
+      <p>SpotBugs version: 4.7.2</p>
+      <p>Code analyzed:</p>
+      <ul>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Barbarian.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Bard.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Character.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Druid.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\GamePlay.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\GamePlayInterface.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Main.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Ranger.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Rogue.class</li>
+         <li>C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\main\Wizard.class</li>
+      </ul>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Metrics</h2>
+      <p>213 lines of code analyzed,
+	in 10 classes, 
+	in 1 packages.</p>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Metric</th>
+            <th align="right">Total</th>
+            <th align="right">Density*</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>High Priority Warnings</td>
+            <td align="right">1</td>
+            <td align="right">4.69</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>Medium Priority Warnings</td>
+            <td align="right">6</td>
+            <td align="right">28.17</td>
+         </tr>
+         <tr class="$totalClass">
+            <td>
+               <b>Total Warnings</b>
+            </td>
+            <td align="right">
+               <b>7</b>
+            </td>
+            <td align="right">
+               <b>32.86</b>
+            </td>
+         </tr>
+      </table>
+      <p>
+         <i>(* Defects per Thousand lines of non-commenting source statements)</i>
+      </p>
+      <p>
+         <br/>
+         <br/>
+      </p>
+      <h2>Contents</h2>
+      <ul>
+         <li>
+            <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+         </li>
+         <li>
+            <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+         </li>
+         <li>
+            <a href="#Details">Details</a>
+         </li>
+      </ul>
+      <h1>Summary</h1>
+      <table width="500" cellpadding="5" cellspacing="2">
+         <tr class="tableheader">
+            <th align="left">Warning Type</th>
+            <th align="right">Number</th>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+            </td>
+            <td align="right">2</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+            </td>
+            <td align="right">1</td>
+         </tr>
+         <tr class="tablerow0">
+            <td>
+               <a href="#Warnings_STYLE">Dodgy code Warnings</a>
+            </td>
+            <td align="right">4</td>
+         </tr>
+         <tr class="tablerow1">
+            <td>
+               <b>Total</b>
+            </td>
+            <td align="right">
+               <b>7</b>
+            </td>
+         </tr>
+      </table>
+      <h1>Warnings</h1>
+      <p>Click on a warning row to see full context information.</p>
+      <h2>
+         <a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e70');">
+            <td>
+               <span class="priority-2">ES</span>
+            </td>
+            <td>Comparison of String objects using == or != in GamePlay.levelUp(Character)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e70" style="display: none;">
+                  <a href="#ES_COMPARING_STRINGS_WITH_EQ">Bug type ES_COMPARING_STRINGS_WITH_EQ (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>Actual type String<br/>Return value of Class.getName() of type String<br/>At GamePlay.java:[line 127]<br/>Another occurrence at GamePlay.java:[line 131]<br/>Another occurrence at GamePlay.java:[line 135]<br/>Another occurrence at GamePlay.java:[line 139]<br/>Another occurrence at GamePlay.java:[line 143]<br/>Another occurrence at GamePlay.java:[line 147]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e100');">
+            <td>
+               <span class="priority-2">Nm</span>
+            </td>
+            <td>The field name GamePlay.Opponents doesn't start with a lower case letter</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e100" style="display: none;">
+                  <a href="#NM_FIELD_NAMING_CONVENTION">Bug type NM_FIELD_NAMING_CONVENTION (click for details)</a>
+                  <br/>In class GamePlay<br/>Field GamePlay.Opponents<br/>In GamePlay.java</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_PERFORMANCE">Performance Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e48');">
+            <td>
+               <span class="priority-2">Dm</span>
+            </td>
+            <td>GamePlay.levelUp(Character) allocates an object, only to get the class object</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e48" style="display: none;">
+                  <a href="#DM_NEW_FOR_GETCLASS">Bug type DM_NEW_FOR_GETCLASS (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>At GamePlay.java:[line 127]<br/>Another occurrence at GamePlay.java:[line 131]<br/>Another occurrence at GamePlay.java:[line 135]<br/>Another occurrence at GamePlay.java:[line 139]<br/>Another occurrence at GamePlay.java:[line 143]<br/>Another occurrence at GamePlay.java:[line 147]</p>
+            </td>
+         </tr>
+      </table>
+      <h2>
+         <a name="Warnings_STYLE">Dodgy code Warnings</a>
+      </h2>
+      <table class="warningtable" width="100%" cellspacing="0">
+         <tr class="tableheader">
+            <th align="left">Code</th>
+            <th align="left">Warning</th>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e19');">
+            <td>
+               <span class="priority-2">DLS</span>
+            </td>
+            <td>Dead store to test in GamePlay.levelUp(Character)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e19" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE">Bug type DLS_DEAD_LOCAL_STORE (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>Local variable named test<br/>At GamePlay.java:[line 159]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e36');">
+            <td>
+               <span class="priority-1">DLS</span>
+            </td>
+            <td>Useless assignment in return from GamePlay.levelUp(Character)</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e36" style="display: none;">
+                  <a href="#DLS_DEAD_LOCAL_STORE_IN_RETURN">Bug type DLS_DEAD_LOCAL_STORE_IN_RETURN (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>At GamePlay.java:[line 159]</p>
+            </td>
+         </tr>
+         <tr class="tablerow1" onclick="toggleRow('d2e113');">
+            <td>
+               <span class="priority-2">SA</span>
+            </td>
+            <td>Double assignment of field Character.protection in GamePlay.levelUp(Character)</td>
+         </tr>
+         <tr class="detailrow1">
+            <td/>
+            <td>
+               <p id="d2e113" style="display: none;">
+                  <a href="#SA_FIELD_DOUBLE_ASSIGNMENT">Bug type SA_FIELD_DOUBLE_ASSIGNMENT (click for details)</a>
+                  <br/>In class GamePlay<br/>In method GamePlay.levelUp(Character)<br/>Field Character.protection<br/>At GamePlay.java:[line 138]</p>
+            </td>
+         </tr>
+         <tr class="tablerow0" onclick="toggleRow('d2e129');">
+            <td>
+               <span class="priority-2">UuF</span>
+            </td>
+            <td>Unused public or protected field: GamePlay.remove</td>
+         </tr>
+         <tr class="detailrow0">
+            <td/>
+            <td>
+               <p id="d2e129" style="display: none;">
+                  <a href="#UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">Bug type UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD (click for details)</a>
+                  <br/>In class GamePlay<br/>Field GamePlay.remove<br/>In GamePlay.java</p>
+            </td>
+         </tr>
+      </table>
+      <h1>
+         <a name="Details">Details</a>
+      </h1>
+      <h2>
+         <a name="DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE: Dead store to local variable</a>
+      </h2>
+
+<p>
+This instruction assigns a value to a local variable,
+but the value is not read or used in any subsequent instruction.
+Often, this indicates an error, because the value computed is never
+used.
+</p>
+<p>
+Note that Sun's javac compiler often generates dead stores for
+final local variables. Because SpotBugs is a bytecode-based tool,
+there is no easy way to eliminate these false positives.
+</p>
+
+    <h2>
+         <a name="DLS_DEAD_LOCAL_STORE_IN_RETURN">DLS_DEAD_LOCAL_STORE_IN_RETURN: Useless assignment in return statement</a>
+      </h2>
+      
+<p>
+This statement assigns to a local variable in a return statement. This assignment
+has no effect. Please verify that this statement does the right thing.
+</p>
+
+    <h2>
+         <a name="DM_NEW_FOR_GETCLASS">DM_NEW_FOR_GETCLASS: Method allocates an object, only to get the class object</a>
+      </h2>
+
+  <p>This method allocates an object just to call getClass() on it, in order to
+  retrieve the Class object for it. It is simpler to just access the .class property of the class.</p>
+
+    <h2>
+         <a name="ES_COMPARING_STRINGS_WITH_EQ">ES_COMPARING_STRINGS_WITH_EQ: Comparison of String objects using == or !=</a>
+      </h2>
+
+  <p>This code compares <code>java.lang.String</code> objects for reference
+equality using the == or != operators.
+Unless both strings are either constants in a source file, or have been
+interned using the <code>String.intern()</code> method, the same string
+value may be represented by two different String objects. Consider
+using the <code>equals(Object)</code> method instead.</p>
+
+    <h2>
+         <a name="NM_FIELD_NAMING_CONVENTION">NM_FIELD_NAMING_CONVENTION: Field names should start with a lower case letter</a>
+      </h2>
+
+  <p>
+Names of fields that are not final should be in mixed case with a lowercase first letter and the first letters of subsequent words capitalized.
+</p>
+
+    <h2>
+         <a name="SA_FIELD_DOUBLE_ASSIGNMENT">SA_FIELD_DOUBLE_ASSIGNMENT: Double assignment of field</a>
+      </h2>
+
+<p> This method contains a double assignment of a field; e.g.
+</p>
+<pre><code>int x,y;
+public void foo() {
+    x = x = 17;
+}
+</code></pre>
+<p>Assigning to a field twice is useless, and may indicate a logic error or typo.</p>
+
+    <h2>
+         <a name="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD">UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD: Unused public or protected field</a>
+      </h2>
+
+  <p> This field is never used.&nbsp;
+The field is public or protected, so perhaps
+    it is intended to be used with classes not seen as part of the analysis. If not,
+consider removing it from the class.</p>
+
+    </body>
+</html>
