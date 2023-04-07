@@ -15,7 +15,7 @@ dependencies {
     implementation files('cls/')
 }
 test {
-exclude '**/BlackBoxGiven.class'
+     exclude '**/BlackBoxGiven.class'
 }
 jacocoTestReport {
     dependsOn test // tests are required to run before generating the report
