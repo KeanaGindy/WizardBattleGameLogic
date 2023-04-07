@@ -1,3 +1,0 @@
-C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\test\BlackBoxGiven.class
-C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\test\TDD.class
-C:\Users\admin\Desktop\SER316\ForStudents\build\classes\java\test\WhiteBoxGiven.class
