@@ -4,7 +4,7 @@ public class GamePlay implements GamePlayInterface {
     
     public Character player;
     public List<Character> opponents;
-    public List<Character> remove;
+    //SER316 TASK2 SPOT-BUGS FIX
     
     /**
      * Default constructor for Game Play.
@@ -137,10 +137,10 @@ public class GamePlay implements GamePlayInterface {
      * You can assume that the new stats are what we want, so they are not wrong. 
      * So this method is not wrong, it is the way we want it!
      * @param character that is leveling up 
-     * @return boolean true if character leveld up, false if they did not
      */
     @Override
-    public boolean levelUp(Character character) {
+    //SER316 TASK2 SPOT-BUGS FIX
+    public void levelUp(Character character) {
         if (character.experience >= character.pointsPerLevel) {
             if (character.experience == character.pointsPerLevel) {
                 character.experience += 5;
@@ -149,28 +149,30 @@ public class GamePlay implements GamePlayInterface {
             character.level++;
             character.pointsPerLevel *= 2; // need more points to level up next time
             character.health = 100; // level up resets health
+            String name = character.getClass().getName();
             
-            if (character.getClass().getName() == new Barbarian().getClass().getName()) {
+            //SER316 TASK2 SPOT-BUGS FIX
+            if (name.equals("Barbarian")) {
                 character.damage += 10;
                 character.speed = character.speed + 0.25;
                 character.protection += 2;
-            } else if (character.getClass().getName() == new Bard().getClass().getName()) {
+            } else if (name.equals("Bard")) {
                 character.damage += character.damage / 2;
                 character.speed += 0.5;
                 character.protection += character.protection / 2;
-            } else if (character.getClass().getName() == new Druid().getClass().getName()) {
+            } else if (name.equals("Druid")) {
                 character.damage += 10;
                 character.speed += 0.25;
-                character.protection = character.protection += 2;
-            } else if (character.getClass().getName() == new Ranger().getClass().getName()) {
+                character.protection += 2;
+            } else if (name.equals("Ranger")) {
                 character.damage += character.damage % 10;
                 character.speed += 0.5;
                 character.protection += character.protection % 5;
-            } else if (character.getClass().getName() == new Rogue().getClass().getName()) {
+            } else if (name.equals("Rogue")) {
                 character.damage += character.damage / 3;
                 character.speed += 1.25;
                 character.protection += 3;
-            } else if (character.getClass().getName() == new Wizard().getClass().getName()) {
+            } else if (name.equals("Wizard")) {
                 character.damage += 5;
                 character.speed += 1;
                 character.protection += 1;
@@ -181,8 +183,6 @@ public class GamePlay implements GamePlayInterface {
             }
             levelUp(character);
         }
-        boolean test;
-        return test = false;
     }
 
     /**
