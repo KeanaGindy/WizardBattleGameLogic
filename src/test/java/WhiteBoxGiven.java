@@ -1,31 +1,22 @@
+import static org.junit.Assert.*;
+
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 public class WhiteBoxGiven {
-	private final PrintStream standardOut = System.out;
-	private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
-
 
     @Before
     public void setUp() throws Exception {
-    	System.setOut(new PrintStream(outputStreamCaptor));
     }
 
     @After
     public void tearDown() throws Exception {
-    	System.setOut(standardOut);
     }
 
     // simple attack test with test of experience after attack
     @Test
-    public void equalDP() {
+    public void equalDp() {
         Character wiz1 = new Wizard();
         Character wiz2 = new Wizard();
 
@@ -44,30 +35,29 @@ public class WhiteBoxGiven {
         
         game.play();
         
-        for(int i = 0; i < game.Opponents.size(); i++) {
-        	Character x = game.Opponents.get(i);
-        	
-        	if(x.getClass().getName() == new Barbarian().getClass().getName()) {
-        		assertEquals(x.experience, 25);
-        	} else if(x.getClass().getName() == new Bard().getClass().getName()) {
-        		assertEquals(x.experience, 12);
-        	} else if(x.getClass().getName() == new Druid().getClass().getName()) {
-        		assertEquals(x.experience, 16);
-        	} else if(x.getClass().getName() == new Ranger().getClass().getName()) {
-        		assertEquals(x.experience, 32);
-        	} else if(x.getClass().getName() == new Rogue().getClass().getName()) {
-        		assertEquals(x.experience, 18);
-        	} else if(x.getClass().getName() == new Wizard().getClass().getName()) {
-        		assertEquals(x.experience, 12);
-        		x.health = -20;
-        	}
+        for (int i = 0; i < game.opponents.size(); i++) {
+            Character x = game.opponents.get(i);
+            if (x.getClass().getName() == new Barbarian().getClass().getName()) {
+                assertEquals(x.experience, 25);
+            } else if (x.getClass().getName() == new Bard().getClass().getName()) {
+                assertEquals(x.experience, 12);
+            } else if (x.getClass().getName() == new Druid().getClass().getName()) {
+                assertEquals(x.experience, 16);
+            } else if (x.getClass().getName() == new Ranger().getClass().getName()) {
+                assertEquals(x.experience, 32);
+            } else if (x.getClass().getName() == new Rogue().getClass().getName()) {
+                assertEquals(x.experience, 18);
+            } else if (x.getClass().getName() == new Wizard().getClass().getName()) {
+                assertEquals(x.experience, 12);
+                x.health = -20;
+            }
         }
         game.play();
-        assertEquals(game.Opponents.size(), 5);
+        assertEquals(game.opponents.size(), 5);
        
     }
     
- // play test for when speed of player and opponent is the same, edge case 1
+    //Play test for when speed of player and opponent is the same, edge case 1.
     
     @Test
     public void playEdgeCase2() {
@@ -82,10 +72,11 @@ public class WhiteBoxGiven {
         wiz1.health = 0;
         game.play();
         
-        assertEquals(game.Opponents.size(),1);
+        assertEquals(game.opponents.size(),1);
     }
     
- // play test for when speed of player is greater than opponent, edge case 2
+    
+    //Play test for when speed of player is greater than opponent, edge case 2.
     
     @Test
     public void playEdgeCase1() {
@@ -100,7 +91,7 @@ public class WhiteBoxGiven {
         bard.health = 0;
         game.play();
         
-        assertEquals(game.Opponents.size(),0);
+        assertEquals(game.opponents.size(),0);
     }
     
     // play test for when double damage occurs, checks experience
@@ -117,26 +108,25 @@ public class WhiteBoxGiven {
         assertEquals(bard.experience, 7);
         game.play();
         
-        assertEquals(game.Opponents.size(),0);
+        assertEquals(game.opponents.size(),0);
     }
    
     //Normal test to see if addOpponent can add to a list of opponents
     @Test
     public void addOpponent() {
-    	GamePlay game = new GamePlay();
-    	Character wiz1 = new Wizard();
-    	game.addOpponent(wiz1);
-    	
-    	assertEquals(game.Opponents.size(),7);
+        GamePlay game = new GamePlay();
+        Character wiz1 = new Wizard();
+        game.addOpponent(wiz1);
+        assertEquals(game.opponents.size(),7);
     }
    
   //Normal test to see if removeOpponent can remove an opponent from the list
     @Test
     public void removeOpponent() {
     	GamePlay game = new GamePlay();
-    	game.removeOpponent(game.Opponents.get(0));
+    	game.removeOpponent(game.opponents.get(0));
     	
-    	assertEquals(game.Opponents.size(),5);
+    	assertEquals(game.opponents.size(),5);
     }
     
    /**

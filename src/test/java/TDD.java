@@ -1,12 +1,13 @@
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import static org.junit.Assert.*;
 
 import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.Collection;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
-import static org.junit.Assert.*;
+
 
 @RunWith(Parameterized.class)
 public class TDD {
@@ -18,7 +19,9 @@ public class TDD {
         this.classUnderTest = (Class<GamePlay>) classUnderTest;
     }
 
-    // Define all classes to be tested
+    /**
+     * Defines classes to be tested.
+     */
     @Parameterized.Parameters
     public static Collection<Object[]> cartClassUnderTest() {
         Object[][] classes = {
@@ -40,26 +43,31 @@ public class TDD {
     }
 
      
-    // normal experience when healthy
+    //normal experience when healthy
     @Test
     public void dealtDamageNormalExperienceHealth100() {
         Wizard wiz = new Wizard();
-        Barbarian bar = new Barbarian();
-        Bard bard = new Bard();
-        Druid dru = new Druid();
-        Ranger ran = new Ranger();
-        Rogue ro = new Rogue();
         
         game.dealDamage(wiz);
         assertEquals(wiz.experience, 5);
+
+        Barbarian bar = new Barbarian();
         game.dealDamage(bar);
         assertEquals(bar.experience, 10);
+        
+        Bard bard = new Bard();
         game.dealDamage(bard);
         assertEquals(bard.experience, 6);
+
+        Druid dru = new Druid();
         game.dealDamage(dru);
         assertEquals(dru.experience, 7);
+
+        Ranger ran = new Ranger();
         game.dealDamage(ran);
         assertEquals(ran.experience, 8);
+
+        Rogue ro = new Rogue();
         game.dealDamage(ro);
         assertEquals(ro.experience, 5);
     }
@@ -173,22 +181,26 @@ public class TDD {
     @Test
     public void takeDamageNormalProtectionCheckHealth() {
         Wizard wiz = new Wizard(); 
-        Barbarian bar = new Barbarian();
-        Bard bard = new Bard();
-        Druid dru = new Druid();
-        Ranger ran = new Ranger();
-        Rogue ro = new Rogue();
-
         game.takeDamage(wiz, 5);
         assertEquals(wiz.health, 96);
+        
+        Barbarian bar = new Barbarian();
         game.takeDamage(bar,11);
         assertEquals(bar.health, 99);
+        
+        Bard bard = new Bard();
         game.takeDamage(bard, 5);
         assertEquals(bard.health, 98);
+
+        Druid dru = new Druid();
         game.takeDamage(dru, 5);
         assertEquals(dru.health, 99);
+
+        Ranger ran = new Ranger();
         game.takeDamage(ran, 10);
         assertEquals(ran.health, 98);
+
+        Rogue ro = new Rogue();
         game.takeDamage(ro, 8);
         assertEquals(ro.health, 98);
     }
@@ -198,22 +210,26 @@ public class TDD {
     @Test
     public void takeDamageNormalProtectionCheckExperience() {
         Wizard wiz = new Wizard(); 
-        Barbarian bar = new Barbarian();
-        Bard bard = new Bard();
-        Druid dru = new Druid();
-        Ranger ran = new Ranger();
-        Rogue ro = new Rogue();
-
         game.takeDamage(wiz, 5);
         assertEquals(wiz.experience, 2);
+
+        Barbarian bar = new Barbarian();
         game.takeDamage(bar, 11);
         assertEquals(bar.experience, 0);
+
+        Bard bard = new Bard();
         game.takeDamage(bard, 5);
         assertEquals(bard.experience, 1);
+
+        Druid dru = new Druid();
         game.takeDamage(dru, 5);
         assertEquals(dru.experience, 0);
+
+        Ranger ran = new Ranger();
         game.takeDamage(ran, 10);
         assertEquals(ran.experience, 1);
+
+        Rogue ro = new Rogue();
         game.takeDamage(ro, 8);
         assertEquals(ro.experience, 1);
     }
@@ -223,23 +239,27 @@ public class TDD {
     //Damage greater than shield && health
     @Test
     public void takeDamageHealthBelowZeroCheckHealth() {
-        Wizard wiz = new Wizard(); 
-        Barbarian bar = new Barbarian();
-        Bard bard = new Bard();
-        Druid dru = new Druid();
-        Ranger ran = new Ranger();
-        Rogue ro = new Rogue();
-
+        Wizard wiz = new Wizard();
         game.takeDamage(wiz, 120);
         assertEquals(wiz.health, -19);
+        
+        Barbarian bar = new Barbarian();
         game.takeDamage(bar,120);
         assertEquals(bar.health, -10);
+
+        Bard bard = new Bard();
         game.takeDamage(bard, 120);
         assertEquals(bard.health, -17);
+
+        Druid dru = new Druid();
         game.takeDamage(dru, 120);
         assertEquals(dru.health, -16);
+
+        Ranger ran = new Ranger();
         game.takeDamage(ran, 120);
         assertEquals(ran.health, -12);
+
+        Rogue ro = new Rogue();
         game.takeDamage(ro, 120);
         assertEquals(ro.health, -14);
     }
@@ -248,156 +268,145 @@ public class TDD {
     @Test
     public void takeDamageHealthBelowZeroCheckExperience() {
         Wizard wiz = new Wizard(); 
-        Barbarian bar = new Barbarian();
-        Bard bard = new Bard();
-        Druid dru = new Druid();
-        Ranger ran = new Ranger();
-        Rogue ro = new Rogue();
-
         game.takeDamage(wiz, 120);
         assertEquals(wiz.experience, 59);
+
+        Barbarian bar = new Barbarian();
         game.takeDamage(bar,120);
         assertEquals(bar.experience, 55);
+
+        Bard bard = new Bard();
         game.takeDamage(bard, 120);
         assertEquals(bard.experience, 58);
+
+        Druid dru = new Druid();
         game.takeDamage(dru, 120);
         assertEquals(dru.experience, 58);
+
+        Ranger ran = new Ranger();
         game.takeDamage(ran, 120);
         assertEquals(ran.experience, 56);
+
+        Rogue ro = new Rogue();
         game.takeDamage(ro, 120);
         assertEquals(ro.experience, 57);
     }
 
-     //Damage same as shield 
-     @Test
+    //Damage same as shield.
+    @Test
      public void takeDamageSameAsShieldCheckExperience() {
-         Wizard wiz = new Wizard(); 
-         Barbarian bar = new Barbarian();
-         Bard bard = new Bard();
-         Druid dru = new Druid();
-         Ranger ran = new Ranger();
-         Rogue ro = new Rogue();
+        Wizard wiz = new Wizard(); 
+        game.takeDamage(wiz, 1);
+        assertEquals(wiz.experience, 0);
+        
+        Barbarian bar = new Barbarian();
+        game.takeDamage(bar,10);
+        assertEquals(bar.experience, 0);
+
+        Bard bard = new Bard();
+        game.takeDamage(bard, 3);
+        assertEquals(bard.experience, 0);
+
+        Druid dru = new Druid();
+        game.takeDamage(dru, 4);
+        assertEquals(dru.experience, 0);
+
+        Ranger ran = new Ranger();
+        game.takeDamage(ran, 8);
+        assertEquals(ran.experience, 0);
+
+        Rogue ro = new Rogue();
+        game.takeDamage(ro, 6);
+        assertEquals(ro.experience, 0);
+    }
+
+    //Damage same as shield.
+    @Test
+    public void takeDamageSameAsShieldCheckHealth() {
+        Wizard wiz = new Wizard(); 
+        game.takeDamage(wiz, 1);
+        assertEquals(wiz.health, 100);
+
+        Barbarian bar = new Barbarian();
+        game.takeDamage(bar,10);
+        assertEquals(bar.health, 100);      
+
+        Bard bard = new Bard();
+        game.takeDamage(bard, 3);
+        assertEquals(bard.health, 100);
+
+        Druid dru = new Druid();
+        game.takeDamage(dru, 4);
+        assertEquals(dru.health, 100);
+
+        Ranger ran = new Ranger();
+        game.takeDamage(ran, 8);
+        assertEquals(ran.health, 100);
+
+        Rogue ro = new Rogue();
+        game.takeDamage(ro, 6);
+        assertEquals(ro.health, 100);
+    }
+
+    //Damage less than shield, check healing.
+    @Test
+    public void takeDamageLessThanShieldCheckHealth() {
+        Wizard wiz = new Wizard(); 
+        wiz.health = 94;
+        Barbarian bar = new Barbarian();
+        bar.health = 94;
+        Bard bard = new Bard();
+        bard.health = 94;
+        Druid dru = new Druid();
+        dru.health = 94;
+        Ranger ran = new Ranger();
+        ran.health = 94;
+        Rogue ro = new Rogue();
+        ro.health = 94;
  
-         game.takeDamage(wiz, 1);
-         assertEquals(wiz.experience, 0);
-         game.takeDamage(bar,10);
-         assertEquals(bar.experience, 0);
-         game.takeDamage(bard, 3);
-         assertEquals(bard.experience, 0);
-         game.takeDamage(dru, 4);
-         assertEquals(dru.experience, 0);
-         game.takeDamage(ran, 8);
-         assertEquals(ran.experience, 0);
-         game.takeDamage(ro, 6);
-         assertEquals(ro.experience, 0);
-     }
+        game.takeDamage(wiz, 0);
+        assertEquals(wiz.health, 94);
+        game.takeDamage(bar,5);
+        assertEquals(bar.health, 96);
+        game.takeDamage(bard, 2);
+        assertEquals(bard.health, 94);
+        game.takeDamage(dru, 2);
+        assertEquals(dru.health, 95);
+        game.takeDamage(ran, 4);
+        assertEquals(ran.health, 96);
+        game.takeDamage(ro, 3);
+        assertEquals(ro.health, 95);
+    }
 
-     //Damage same as shield 
-     @Test
-     public void takeDamageSameAsShieldCheckHealth() {
-         Wizard wiz = new Wizard(); 
-         Barbarian bar = new Barbarian();
-         Bard bard = new Bard();
-         Druid dru = new Druid();
-         Ranger ran = new Ranger();
-         Rogue ro = new Rogue();
+    //Damage less than shield, check experience.
+    @Test
+    public void takeDamageLessThanShieldCheckExperience() {
+        Wizard wiz = new Wizard(); 
+        wiz.health = 94;
+        Barbarian bar = new Barbarian();
+        bar.health = 94;
+        Bard bard = new Bard();
+        bard.health = 94;
+        Druid dru = new Druid();
+        dru.health = 94;
+        Ranger ran = new Ranger();
+        ran.health = 94;
+        Rogue ro = new Rogue();
+        ro.health = 94;
  
-         game.takeDamage(wiz, 1);
-         assertEquals(wiz.health, 100);
-         game.takeDamage(bar,10);
-         assertEquals(bar.health, 100);
-         game.takeDamage(bard, 3);
-         assertEquals(bard.health, 100);
-         game.takeDamage(dru, 4);
-         assertEquals(dru.health, 100);
-         game.takeDamage(ran, 8);
-         assertEquals(ran.health, 100);
-         game.takeDamage(ro, 6);
-         assertEquals(ro.health, 100);
-     }
-
-     //Damage less than shield, check healing
-     @Test
-     public void takeDamageLessThanShieldCheckHealth() {
-         Wizard wiz = new Wizard(); 
-         wiz.health = 94;
-         Barbarian bar = new Barbarian();
-         bar.health = 94;
-         Bard bard = new Bard();
-         bard.health = 94;
-         Druid dru = new Druid();
-         dru.health = 94;
-         Ranger ran = new Ranger();
-         ran.health = 94;
-         Rogue ro = new Rogue();
-         ro.health = 94;
- 
-         game.takeDamage(wiz, 0);
-         assertEquals(wiz.health, 94);
-         game.takeDamage(bar,5);
-         assertEquals(bar.health, 96);
-         game.takeDamage(bard, 2);
-         assertEquals(bard.health, 94);
-         game.takeDamage(dru, 2);
-         assertEquals(dru.health, 95);
-         game.takeDamage(ran, 4);
-         assertEquals(ran.health, 96);
-         game.takeDamage(ro, 3);
-         assertEquals(ro.health, 95);
-     }
-
-     //Damage less than shield, check experience
-     @Test
-     public void takeDamageLessThanShieldCheckExperience() {
-         Wizard wiz = new Wizard(); 
-         wiz.health = 94;
-         Barbarian bar = new Barbarian();
-         bar.health = 94;
-         Bard bard = new Bard();
-         bard.health = 94;
-         Druid dru = new Druid();
-         dru.health = 94;
-         Ranger ran = new Ranger();
-         ran.health = 94;
-         Rogue ro = new Rogue();
-         ro.health = 94;
- 
-         game.takeDamage(wiz, 0);
-         assertEquals(wiz.experience, 1);
-         game.takeDamage(bar,5);
-         assertEquals(bar.experience, 5);
-         game.takeDamage(bard, 2);
-         assertEquals(bard.experience, 1);
-         game.takeDamage(dru, 2);
-         assertEquals(dru.experience, 2);
-         game.takeDamage(ran, 4);
-         assertEquals(ran.experience, 4);
-         game.takeDamage(ro, 3);
-         assertEquals(ro.experience, 3);
-     }
-
-
-       /**
-     * Function that facilitates the attacker dealing damage to their opponent and then the opposite.
-     * 
-     * A character can only attack if both still have health greater than 0, this needs to be true for both attacks happening here
-     * 
-     * This method uses dealDamage and takeDamage from above, which you should BlackBox test first. 
-     * 
-     * An attack only happens if health>0 for both characters
-     * The first character attacks first, by using dealsDamage and the opponent takesDamage. 
-     * Then the characters level up (call levelUp on both) -- if health > 0
-     * 
-     * Then the other character attacks, same procedure as above
-     * 
-     * 
-     *
-     * @param character that is attacking
-     * @param opponent that is being attacked
-     *
-     *@Override
-     *public void attack(Character character, Character opponent) {
-     */
+        game.takeDamage(wiz, 0);
+        assertEquals(wiz.experience, 1);
+        game.takeDamage(bar,5);
+        assertEquals(bar.experience, 5);
+        game.takeDamage(bard, 2);
+        assertEquals(bard.experience, 1);
+        game.takeDamage(dru, 2);
+        assertEquals(dru.experience, 2);
+        game.takeDamage(ran, 4);
+        assertEquals(ran.experience, 4);
+        game.takeDamage(ro, 3);
+        assertEquals(ro.experience, 3);
+    }
 
     //Attack Normal, check Health of Opponent
     @Test
