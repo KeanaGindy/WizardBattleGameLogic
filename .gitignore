@@ -5,11 +5,8 @@
 # gradle files
 *.gradle
 
-<<<<<<< HEAD
-=======
 #Project file
 *.project
->>>>>>> abd8c7543d9236d0283376d9b9a00812f11ed6a0
 
 # Log file
 *.log
