@@ -8,7 +8,7 @@ public interface GamePlayInterface {
     
     public int takeDamage(Character character, int blowDamage);
     
-    public boolean levelUp(Character character);
+    public void levelUp(Character character);
     
     public void attack(Character character, Character opponent);
     

@@ -1,5 +1,9 @@
 public class Rogue extends Character {
-
+    
+    /**
+     * Constructor for Rogue.
+     */
+    
     public Rogue() {
         protection = 6;
         damage = 5;

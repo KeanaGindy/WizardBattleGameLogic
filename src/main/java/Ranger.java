@@ -1,5 +1,9 @@
 public class Ranger extends Character {
-
+    
+    /**
+     * Constructor for Ranger.
+     */
+    
     public Ranger() {
         protection = 8;
         damage = 8;
