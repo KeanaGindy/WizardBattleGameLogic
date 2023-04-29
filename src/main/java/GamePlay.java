@@ -149,39 +149,64 @@ public class GamePlay implements GamePlayInterface {
             character.level++;
             character.pointsPerLevel *= 2; // need more points to level up next time
             character.health = 100; // level up resets health
-            String name = character.getClass().getName();
-            
-            //SER316 TASK2 SPOT-BUGS FIX
-            if (name.equals("Barbarian")) {
-                character.damage += 10;
-                character.speed = character.speed + 0.25;
-                character.protection += 2;
-            } else if (name.equals("Bard")) {
-                character.damage += character.damage / 2;
-                character.speed += 0.5;
-                character.protection += character.protection / 2;
-            } else if (name.equals("Druid")) {
-                character.damage += 10;
-                character.speed += 0.25;
-                character.protection += 2;
-            } else if (name.equals("Ranger")) {
-                character.damage += character.damage % 10;
-                character.speed += 0.5;
-                character.protection += character.protection % 5;
-            } else if (name.equals("Rogue")) {
-                character.damage += character.damage / 3;
-                character.speed += 1.25;
-                character.protection += 3;
-            } else if (name.equals("Wizard")) {
-                character.damage += 5;
-                character.speed += 1;
-                character.protection += 1;
+            String name = character.getClass().getSimpleName();
+
+            Map<String, Map<String, Double>> classModifiers = new HashMap<>();
+
+            Map<String, Double> barbarianModifiers = new HashMap<>();
+            barbarianModifiers.put("damage", 10.0);
+            barbarianModifiers.put("speed", 0.25);
+            barbarianModifiers.put("protection", 2.0);
+            classModifiers.put("Barbarian", barbarianModifiers);
+
+            Map<String, Double> bardModifiers = new HashMap<>();
+            bardModifiers.put("damage", 0.5);
+            bardModifiers.put("speed", 0.5);
+            bardModifiers.put("protection", 0.5);
+            classModifiers.put("Bard", bardModifiers);
+
+            Map<String, Double> druidModifiers = new HashMap<>();
+            druidModifiers.put("damage", 10.0);
+            druidModifiers.put("speed", 0.25);
+            druidModifiers.put("protection", 2.0);
+            classModifiers.put("Druid", druidModifiers);
+
+            Map<String, Double> rangerModifiers = new HashMap<>();
+            rangerModifiers.put("damage", 0.0);
+            rangerModifiers.put("speed", 0.5);
+            rangerModifiers.put("protection", 0.0);
+            classModifiers.put("Ranger", rangerModifiers);
+
+            Map<String, Double> rogueModifiers = new HashMap<>();
+            rogueModifiers.put("damage", 0.33);
+            rogueModifiers.put("speed", 1.25);
+            rogueModifiers.put("protection", 3.0);
+            classModifiers.put("Rogue", rogueModifiers);
+
+            Map<String, Double> wizardModifiers = new HashMap<>();
+            wizardModifiers.put("damage", 5.0);
+            wizardModifiers.put("speed", 1.0);
+            wizardModifiers.put("protection", 1.0);
+            classModifiers.put("Wizard", wizardModifiers);
+
+            Map<String, Double> defaultModifiers = new HashMap<>();
+            defaultModifiers.put("damage", 1.0);
+            defaultModifiers.put("speed", 0.25);
+            defaultModifiers.put("protection", 1.0);
+            classModifiers.put("Character", defaultModifiers);
+
+            Map<String, Double> modifiers = classModifiers.get(name);
+
+            if (modifiers != null) {
+                character.damage += modifiers.getOrDefault("damage", 0.0);
+                character.speed += modifiers.getOrDefault("speed", 0.0);
+                character.protection += modifiers.getOrDefault("protection", 0.0);
             } else {
+                // Default stat modifications
                 character.damage++;
                 character.speed += 0.25;
                 character.protection++;
             }
-            levelUp(character);
         }
     }
 

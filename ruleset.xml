@@ -33,6 +33,17 @@
     </properties>
 </rule>
 <rule ref="category/java/bestpractices.xml/LooseCoupling" />
-
+<rule ref="category/java/design.xml/TooManyMethods">
+        <properties>
+            <property name="maximum" value="20"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/TooManyFields">
+        <properties>
+            <property name="maximum" value="10"/>
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/DataClass"/>
+    <rule ref="category/java/design.xml/LongParameterList"/>
 
 </ruleset>
